@@ -1,0 +1,153 @@
+body {
+    background: linear-gradient(135deg, #011e2b, #023546, #036b97);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.chat-container {
+    background: linear-gradient(135deg, #1d1c1c, #2d455e);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    margin: 60px auto;
+    max-width: 700px;
+}
+
+.chat-header {
+    background: linear-gradient(90deg, #142330, #3a5c80);
+    color: white;
+    padding: 10px 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.chat-header img {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.chat-header h1 {
+    margin: 0;
+    margin-top: 3px;
+    font-size: 38px;
+    font-weight: bold;
+    color: #fff;
+    background-image: linear-gradient(135deg, #4dd0fc, #0a3dd8, #010149);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex-grow: 1;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.message {
+    margin-bottom: 10px;
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    color: #fff;
+}
+
+.user-message {
+    background: linear-gradient(135deg, #0e253d, #1c5d85);
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.maya-message {
+    background: linear-gradient(135deg, #1c5d85, #0e253d);
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+}
+
+.maya-greeting {
+    color: white;
+    margin-top: 30%;
+    margin-left: 10%;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.maya-greeting img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #1e272e;
+    border-top: 1px solid #34495e;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+form {
+    display: flex;
+    width: 100%;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    background-color: #2f3640;
+    color: #ffffff;
+    border: 1px solid #4b6584;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .chat-container {
+        width: 90%;
+        height: 90vh;
+    }
+
+    .chat-header h1 {
+        font-size: 36px;
+    }
+
+    .maya-greeting {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+}

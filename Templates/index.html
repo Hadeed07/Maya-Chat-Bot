@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <h1>Maya</h1>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            
+            {% if not chat_history %}
+                <div class="message maya-greeting">
+                    Hi there!
+                    <img src="{{ url_for('static', filename='images/chick.png') }}" alt="chick">
+                    I'm Maya. What's on your mind today?
+                </div>
+            {% endif %}
+            
+            {% for msg in chat_history %}
+                <div class="message user-message">
+                    {{ msg.user_message }}
+                </div>
+
+                <div class="message maya-message">
+                    {{ msg.maya_response | markdown}}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="input-area">
+            <form action="{{ url_for('index') }}" method="post" id="chat-form">
+                <input type="text" id="message-input" name="message" placeholder="Type your message..." required>
+                <button class="icon material-symbols-rounded" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    </script>
+
+</body>
+</html>
