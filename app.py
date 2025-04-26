@@ -81,4 +81,4 @@ if __name__ == "__main__":
         ChatHistory.query.delete()  # Clear the database for fresh start
         db.session.commit()
 
-    app.run(debug=True)
+    app.run(debug=True, host = '0.0.0.0')
